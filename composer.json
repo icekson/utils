@@ -1,0 +1,32 @@
+{
+    "name": "icekson/utils",    
+    "description": "Utils classes",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alexey Itsekson",
+            "email": "icekson85@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6",
+        "zendframework/zend-mail": "2.6.*",
+        "psr/log": "1.0.*",
+        "monolog/monolog": "~1.12",
+        "doctrine/common": "^2.6"        
+    },
+     "require-dev": {
+        "phpunit/phpunit" : "5.*",
+        "phpunit/phpunit-mock-objects" : "3.0.*"                
+    },
+    "autoload": {
+        "psr-4": {"Icekson\\Utils\\": "src/Utils"}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
