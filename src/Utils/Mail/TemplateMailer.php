@@ -88,9 +88,8 @@ class TemplateMailer implements IzMailer
         $this->mailer = new Mailer();
         $this->message = new MailMessage();
         $this->setTemplate($template);
-        if(is_array($params)){
-            $this->setParams(implode(",",$params));
-        }
+        $this->setParams($params);
+
     }
 
     /**
@@ -214,7 +213,10 @@ class TemplateMailer implements IzMailer
      * @return $this
      */
     public function setParams($params){
-        $this->params = (array)$params;
+        if(is_string($params)){
+            $params = explode(",",$params);
+        }
+        $this->params = $params;
         return $this;
     }
 
