@@ -83,8 +83,9 @@ class QueuedTemplateMailer extends TemplateMailer implements Mailer{
             $queue->setToName($to->getName());
             $this->manager->persist($queue);
             $this->manager->flush($queue);
+            $entityCopyClass = $this->getEntityCopyClass();
             foreach($message->getBcc() as $bcc){
-                $queueBcc = new $this->getEntityCopyClass();
+                $queueBcc = new $entityCopyClass();
                 $queueBcc->setEmail($bcc->getEmail());
                 $queueBcc->setName($bcc->getName());
                 $queueBcc->setMailQueue($queue);
