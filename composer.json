@@ -15,14 +15,18 @@
         "zendframework/zend-mail": "2.6.*",
         "psr/log": "1.0.*",
         "monolog/monolog": "~1.12",
-        "doctrine/common": "2.5.*"        
+        "doctrine/common": "2.5.*",
+		"hassankhan/config": "^0.8.2"	
     },
      "require-dev": {
         "phpunit/phpunit" : "5.*",
         "phpunit/phpunit-mock-objects" : "3.0.*"                
     },
     "autoload": {
-        "psr-4": {"Icekson\\Utils\\": "src/Utils"}
+        "psr-4": {
+            "Icekson\\Utils\\": "src/Utils",
+            "Icekson\\Config\\": "src/Config"
+        }
     },
     "extra": {
         "branch-alias": {
