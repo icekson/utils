@@ -15,6 +15,7 @@ use Psr\Log\LoggerInterface;
 class Logger
 {
 
+    const LOGGER_LEVEL = "logger_level";
     private static $loggers = [];
 
     /**
@@ -27,6 +28,11 @@ class Logger
     public static function createLogger($name, $config = [], $level = \Monolog\Logger::DEBUG)
     {
         if (!isset(self::$loggers[$name])) {
+
+            if(!empty($config) && isset($config[self::LOGGER_LEVEL])){
+                $level = $config[self::LOGGER_LEVEL];
+            }
+
             $logger = new \Monolog\Logger($name);
             $logger->pushHandler(new StreamHandler('php://stdout'));
             $file = PATH_ROOT . '/logs/' . preg_replace('/[\/\\\._-]+/', ".", $name) . ".log";
@@ -49,7 +55,7 @@ class Logger
                         $channel->close();
                     });
 
-                } catch (\Throwable $e) {
+                } catch (\Exception $e) {
                     // throw $e;
                     // echo 'amqp logger error: ' . $e->getMessage() . "\n" . $e->getTraceAsString();
                 }
