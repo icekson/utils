@@ -32,6 +32,7 @@ class Logger
             if(!empty($config) && isset($config[self::LOGGER_LEVEL])){
                 $level = $config[self::LOGGER_LEVEL];
             }
+            
 
             $logger = new \Monolog\Logger($name);
             $logger->pushHandler(new StreamHandler('php://stdout'));
