@@ -49,7 +49,7 @@ class Logger
                         $channel->close();
                     });
 
-                } catch (\Exception $e) {
+                } catch (\Throwable $e) {
                     // throw $e;
                     // echo 'amqp logger error: ' . $e->getMessage() . "\n" . $e->getTraceAsString();
                 }
