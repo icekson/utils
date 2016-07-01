@@ -54,7 +54,7 @@ class Logger
                     // echo 'amqp logger error: ' . $e->getMessage() . "\n" . $e->getTraceAsString();
                 }
                 if ($channel !== null) {
-                    $logger->pushHandler(new AmqpHandler($channel, 'monitor-log'));
+                    $logger->pushHandler(new AmqpHandler($channel, 'monitor-log', $level));
                 }
             }
             self::$loggers[$name] = $logger;
