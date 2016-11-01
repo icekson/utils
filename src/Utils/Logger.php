@@ -52,8 +52,8 @@ class Logger
                     $channel->exchange_declare('monitor-log', 'topic', false, true, false);
 
                     register_shutdown_function(function () use ($conn, $channel) {
-                        $conn->close();
-                        $channel->close();
+						$channel->close();
+                        $conn->close();                        
                     });
 
                 } catch (\Exception $e) {
