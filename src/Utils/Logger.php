@@ -17,7 +17,7 @@ class Logger
 
     const LOGGER_LEVEL = "logger_level";
     private static $loggers = [];
-
+	
     /**
      * @param $name
      * @param $config
