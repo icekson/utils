@@ -4,7 +4,7 @@
  * @createdAt: 15.07.2016 22:35
  */
 
-namespace Utils;
+namespace Icekson\Utils;
 
 
 class ConsoleTextColorizator
